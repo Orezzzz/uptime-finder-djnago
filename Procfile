@@ -1,0 +1,1 @@
+web: gunicorn uptime.wsgi --log-file -
