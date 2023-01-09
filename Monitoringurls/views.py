@@ -160,7 +160,9 @@ class urlCreateHistory(APIView):
                 status="DOWN"
 
             current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
+            print(current_time)
             minutes = current_time.minute
+            print(minutes)
 
             context={
             "created_at":str(current_time),
