@@ -75,7 +75,7 @@ def get_urls_history(request):
         user = request.user
         data = request.data
 
-        Urlshistory = urlshistory.objects.filter(urlslist__url_name=data['url_name'],)
+        Urlshistory = urlshistory.objects.filter(urlslist__url_name=data['url_name'],).order_by('id')
 
         result_page = paginator.paginate_queryset(Urlshistory, request)
         #Urlshistory = urlshistory.objects.filter(urlslist__user_id= user, urlslist__url_name=data['url_name'])
