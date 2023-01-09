@@ -147,6 +147,7 @@ class urlCreateHistory(APIView):
     def post(self, request, *args, **kwargs):
 
         user = request.user
+        serializer={}
 
         urls = urlslist.objects.all()
 
@@ -162,7 +163,7 @@ class urlCreateHistory(APIView):
             current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
             print(current_time)
             minutes = current_time.minute
-            print(minutes)
+            print(current_time)
 
             context={
             "created_at":str(current_time),
