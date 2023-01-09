@@ -27,6 +27,7 @@ class urlshistory(models.Model):
     urlslist = models.ForeignKey(urlslist, on_delete=models.CASCADE)
     created_at = models.CharField( max_length=100,    )
     updated_at = models.DateTimeField(auto_now=True)
+    minutes = models.IntegerField(default=1)
 
     ACTIVE = 'ACTIVE'
     DOWN = 'DOWN'
