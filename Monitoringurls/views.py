@@ -150,6 +150,7 @@ class urlCreateHistory(APIView):
 
         urls = urlslist.objects.all()
 
+        print(urls)
         for url in urls:
 
             response = requests.get(str(url)).status_code
