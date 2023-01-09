@@ -152,6 +152,7 @@ class urlCreateHistory(APIView):
 
         print(urls)
         for url in urls:
+            print(url)
 
             response = requests.get(str(url)).status_code
         
@@ -170,6 +171,7 @@ class urlCreateHistory(APIView):
             }
 
             serializer = self.serializer_class(data=context)
+            print(serializer)
 
             if serializer.is_valid():
                 print("history created")
