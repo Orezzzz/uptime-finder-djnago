@@ -144,6 +144,7 @@ class urlCreateHistory(APIView):
         return Response(data=serializer.data, status=200)
 
     def post(self, request, *args, **kwargs):
+        print("create history called")
 
         user = request.user
 
@@ -170,6 +171,7 @@ class urlCreateHistory(APIView):
             serializer = self.serializer_class(data=context)
 
             if serializer.is_valid():
+                print("history created")
                 serializer.save()
                
 
