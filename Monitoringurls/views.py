@@ -74,7 +74,6 @@ def get_urls_history(request):
         paginator = StandardResultsSetPagination()
         user = request.user
         data = request.data
-        
 
         Urlshistory = urlshistory.objects.filter(urlslist__url_name=data['url_name'],).order_by('id')
 
@@ -160,14 +159,12 @@ class urlCreateHistory(APIView):
                 status="DOWN"
 
             current_time = datetime.datetime.now(pytz.timezone('Asia/Kolkata'))
-            minutes = current_time.minute
 
             context={
             "created_at":str(current_time),
             "updated_at":str(current_time),
             "status": status,
-            "urlslist": url.id,
-            "minute":minutes
+            "urlslist": url.id
             }
 
             serializer = self.serializer_class(data=context)
